@@ -1,25 +1,39 @@
-import logo from './logo.svg';
-import './App.css';
+import './Styles/App.scss';
+import React, { Component } from 'react';
+import { Header } from './PageElements/Header/Header'
+import { Main } from './PageElements/Main/Main'
+import { BrowserRouter as Router } from 'react-router-dom';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+class App extends Component {
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      menuSelection: '',
+    }
+  }
+
+  HandleMenuOptions = (event, navigationBar) => {
+    this.setState({ menuSelection: event.target.innerText });    
+    for(let menuItem in navigationBar){
+      navigationBar.map(menuItem)
+    }
+    console.log(event.target.innerText)
+    
+    
+  }
+
+  render() {
+    return (
+      <Router>
+        <div className="full__container">
+          <Header menuSelection={this.HandleMenuOptions} />
+          <Main stateTest={this.state.menuSelection} />  
+        </div>
+      </Router>
+    );
+  }
 }
 
 export default App;

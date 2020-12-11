@@ -1,0 +1,32 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    flex-flow: row wrap;
+    align-items: center;
+    background-color: #c2c58a;
+    nav {
+        display: flex;
+        justify-content: space-evenly;
+        flex-flow: row nowrap;
+        width: 70%;
+        text-align: center;
+    }
+    img {
+        width: 5vw;
+        height: 4vw;
+        margin-left: 1%;
+    }
+}
+
+a {
+    color: rgb(51, 51, 255);
+    font-size: 1vw;
+    width: 10%;
+    text-decoration: none;
+    &:hover {
+        cursor: pointer;
+        text-decoration: underline white;
+        font-weight: bold;
+        color: rgb(228, 231, 255);
+    }
+}

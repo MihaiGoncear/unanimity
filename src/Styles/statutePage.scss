@@ -1,0 +1,17 @@
+.title__li__statute {
+    font-weight: bold;
+    font-size: 1vw;
+
+
+    .decimal__ul {
+        font-weight: normal;
+        list-style: none;
+        margin-left: 1.3vw;
+        
+        .decimal__ul__ul {
+            list-style-type: disc;
+            margin-left: 3vw;
+        }
+    }
+
+}
